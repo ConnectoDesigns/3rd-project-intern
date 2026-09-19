@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Books Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>📚 My Books Library</h1>
+        <p>Manage Your Personal Collection</p>
+    </header>
+
+    <!-- Controls Section -->
+    <div class="container controls-container">
+        <div class="search-box">
+            <input type="text" id="searchinput" placeholder="🔍 Search by title or author...">
+        </div>
+        <div class="categories">
+            <button class="cat-btn active" data-cat="all">All</button>
+            <button class="cat-btn" data-cat="Novel">Novel</button>
+            <button class="cat-btn" data-cat="Study">Study</button>
+            <button class="cat-btn" data-cat="Islamic">Islamic</button>
+            <button class="cat-btn" data-cat="History">History</button>
+        </div>
+    </div>
+
+    <!-- Main Workspace -->
+    <div class="container">
+        <div class="add-book-section">
+            <h3>Add New Book</h3>
+            <div class="form-grid">
+                <input type="text" id="title" class="form-grid-input" placeholder="Book Title*">
+                <input type="text" id="author" class="form-grid-input" placeholder="Author*">
+                <select id="category" class="form-grid-select">
+                    <option value="Novel">Novel</option>
+                    <option value="Study">Study</option>
+                    <option value="Islamic">Islamic</option>
+                    <option value="History">History</option>
+                </select>
+                <button id="addBtn">Add Book</button>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <div>
+                <h2 id="bookCount">All Books (0)</h2>
+                <div id="bookList" class="book-grid"></div>
+            </div>
+            <div class="history-panel">
+                <h2>Borrowing History</h2>
+                <div id="historyList"></div>
+                <button id="clearHistory" class="clear-btn">Clear History</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Borrowing Popup Modal -->
+    <div id="borrowModal" class="modal">
+        <div class="modal-content">
+            <h3>Borrow Book</h3>
+            <p id="modalBookName" style="margin-top: 10px; opacity: 0.8;"></p>
+            <input type="text" id="borrowName" placeholder="Borrower Name*">
+            <div class="modal-actions">
+                <button id="cancelBorrow">Cancel</button>
+                <button id="confirmBorrow">Confirm Borrow</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
